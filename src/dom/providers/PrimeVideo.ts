@@ -82,9 +82,11 @@ export default class PrimeVideo extends Manager {
     browserExtensionProducts.forEach(async (browserExtensionProduct) => {
       // Note : Save in cache product information before rendering to prevent UI bugs
       const hash = md5(browserExtensionProduct.platformId.toString())
+      const videoName = browserExtensionProduct?.name
+
       const videoInfo = {
-        name: name,
-        redirect: await generateRedirectUrl(name),
+        name: videoName,
+        redirect: await generateRedirectUrl(videoName),
         id: '',
         url: browserExtensionProduct.url,
         type: browserExtensionProduct.type,
@@ -241,14 +243,14 @@ export default class PrimeVideo extends Manager {
         name: videoName,
         rating: rating,
         serviceWebsite: service,
-        netflix_id: this.currentVideoId(),
+        amazon_id: this.currentVideoId(),
         provider: Provider.AMAZON,
       })
     } else {
       this.logger.error(`Cannot fetch rating for video ${videoName}`, {
         name: videoName,
         serviceWebsite: service,
-        netflix_id: this.currentVideoId(),
+        amazon_id: this.currentVideoId(),
         provider: Provider.AMAZON,
       })
     }

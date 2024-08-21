@@ -54,6 +54,8 @@ export class Rating {
     divLogo.style.paddingLeft = '10px'
     divLogo.style.display = 'flex'
     divLogo.style.alignItems = 'center'
+    divLogo.style.height = 'fit-content'
+    divLogo.style.alignSelf = 'center'
 
     const logo = document.createElement('img')
     logo.src = 'data:image/png;base64, ' + this.logo
