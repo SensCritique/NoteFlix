@@ -94,7 +94,7 @@ export default class Netflix extends Manager {
           cardElement.prepend(mainDiv)
 
           this.renderRating(Service.SENSCRITIQUE, cardElement, {
-            name: '',
+            name: videoName,
             redirect: await generateRedirectUrl(videoName),
             id: '',
             url: browserExtensionProduct.url,
