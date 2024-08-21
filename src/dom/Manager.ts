@@ -23,7 +23,6 @@ export default class Manager {
     videoType: string,
     seasons: string,
     provider: string,
-    // eslint-disable-next-line no-unused-vars
     callback: (response: VideoInfo) => void
   ): void {
     chrome.runtime.sendMessage(
@@ -44,7 +43,6 @@ export default class Manager {
   getRatingsByPlatformId(
     service: string,
     platformProductIds: string[],
-    // eslint-disable-next-line no-unused-vars
     callback: (browserExtensionProducts: BrowserExtensionProduct[]) => void
   ): void {
     if (platformProductIds.length) {

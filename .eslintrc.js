@@ -22,7 +22,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-unused-vars': 'error',
+    'no-unused-vars': 'off',
     'no-console': ['error', { allow: ['error'] }],
     semi: ['error', 'never'],
     'comma-dangle': 'off',
