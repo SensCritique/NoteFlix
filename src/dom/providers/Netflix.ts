@@ -62,9 +62,10 @@ export default class Netflix extends Manager {
     // Response from API with all browserExtensionProducts
     for (const browserExtensionProduct of browserExtensionProducts) {
       const hash = md5(browserExtensionProduct.platformId.toString())
+      const videoName = browserExtensionProduct?.name
       const videoInfo = {
-        name: name,
-        redirect: await generateRedirectUrl(name),
+        name: videoName,
+        redirect: await generateRedirectUrl(videoName),
         id: '',
         url: browserExtensionProduct.url,
         type: browserExtensionProduct.type,
@@ -93,7 +94,7 @@ export default class Netflix extends Manager {
           cardElement.prepend(mainDiv)
 
           this.renderRating(Service.SENSCRITIQUE, cardElement, {
-            name: '',
+            name: videoName,
             redirect: await generateRedirectUrl(videoName),
             id: '',
             url: browserExtensionProduct.url,

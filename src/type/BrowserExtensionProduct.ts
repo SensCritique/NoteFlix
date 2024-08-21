@@ -1,6 +1,7 @@
 import { VideoType } from '../enum/VideoType'
 
 export type BrowserExtensionProduct = {
+  name?: string
   rating?: number
   platformId: string
   url?: string
